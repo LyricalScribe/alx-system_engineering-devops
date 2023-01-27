@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# a script to print string using untill loop
+
+
+
+I=11
+
+until [ $I == 1 ]
+
+do
+
+    echo "Best School"
+
+    I=$((I-1))
+
+done

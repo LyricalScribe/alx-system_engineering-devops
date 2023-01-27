@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#A script to print a string and if statement
+
+
+
+I=0
+
+while [ $I -lt 11 ];
+
+do
+
+    if [ $I = 9 ];
+
+    then
+
+	echo "Hi"
+
+    else
+
+	echo "Best School"
+
+    fi
+
+    ((I++))
+
+done

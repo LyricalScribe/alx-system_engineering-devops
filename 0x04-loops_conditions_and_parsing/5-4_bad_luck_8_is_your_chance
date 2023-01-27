@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# A script to print a loop with messages inbetween
+
+
+
+COUNTER=1
+
+while [ $COUNTER -lt 11 ]
+
+do
+
+    if [ $COUNTER = 4 ];
+
+    then
+
+	echo "bad luck"
+
+    elif [ $COUNTER = 8 ];
+
+    then
+
+	echo "good luck"
+
+    else
+
+	echo "Best School"
+
+    fi
+
+    ((COUNTER++))
+
+done

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Displays the content in the current working directory
+
+
+
+for FILE in *;
+
+do
+
+    echo "$FILE" | cut -d'-' -f2
+
+done
