@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bini/env bash
 # connect using ssh
-ssh -i ~/.ssh/school @DESKTOP-8QIVBOH
+ssh -i ~/.ssh/school ubuntu@52.86.226.250
