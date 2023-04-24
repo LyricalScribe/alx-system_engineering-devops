@@ -1,3 +1,3 @@
-Host 8QIVBOH
+Host 52.86.226.250
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
