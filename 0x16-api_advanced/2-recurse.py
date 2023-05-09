@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" script to recursively call an api"""
+    """ script to recursively call an api"""
 import requests
 
 
@@ -11,14 +11,14 @@ def recurse(subreddit, hot_list=[], after=None):
     headers = {"User-Agent": 'My agent'}
     response = requests.get(url, headers=headers, allow_redirects=False)
 
-    if response.status_code == 200:
-        posts = posts.json()['data']
-        post = post['after']
-        post = post['children']
+    if posts.status_code == 200:
+        posts = response.json()['data']['chilren']
         for post in posts:
             hot_list.append(post['data']['title'])
+        after = response.json()['data']['after']
         if after is not None:
-            recurse(subreddit, hot_list=hot_list)
-        return (hot_list)
+            recurse(subreddit, hot_list=hot_list, after=after)
+        return hot_list
     else:
-        return (None)
+        return None
+

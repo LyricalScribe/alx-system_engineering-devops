@@ -8,7 +8,7 @@ import requests
 def top_ten(subreddit):
     """ gets the top ten hot topics"""
 
-    url = "reddit.com/r/{}/hot.json?limit=10".format(subreddit)
+    url = "https://reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     headers = {"User-Agent": 'My agent'}
 
     posts = requests.get(url, headers=headers, allow_redirects=False)
@@ -17,4 +17,4 @@ def top_ten(subreddit):
         for post in posts.json()['data']['children']:
             print(post['data']['title'])
     else:
-        return (None)
+        return None
