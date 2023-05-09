@@ -18,4 +18,4 @@ def top_ten(subreddit):
         for post in posts['data']['children']:
             print(post['data']['title'])
     else:
-        return (Non)e
+        return (None)
