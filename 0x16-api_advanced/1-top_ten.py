@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" retrieve the top ten hot topic on reddit """
+""" retrieve the top ten hot topic on reddit"""
 
 import requests
 
@@ -18,4 +18,4 @@ def top_ten(subreddit):
         for post in posts['data']['children']:
             print(post['data']['title'])
     else:
-        return None
+        return (Non)e
