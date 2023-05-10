@@ -1,24 +1,26 @@
 #!/usr/bin/python3
+""" script to recursively call an api"""
 
-    """ script to recursively call an api"""
 import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    """ function to recursively call an api"""
+    """return list of all hot posts titles of a subreddit """
 
-    url = "https://www.reddit.com/r/{}/hot.json?limit=50&after={}".format(subreddit, after)
-    headers = {"User-Agent": 'My agent'}
+    headers = {'User-agent': 'my agent'}
+    url = "https://www.reddit.com/r/{}/hot.json?limit=50&after={}".format(
+            subreddit, after)
     response = requests.get(url, headers=headers, allow_redirects=False)
 
-    if posts.status_code == 200:
-        posts = response.json()['data']['chilren']
-        for post in posts:
-            hot_list.append(post['data']['title'])
-        after = response.json()['data']['after']
+    if response.status_code == 200:
+        data = response.json()['data']
+        after = data['after']
+        articles = data['children']
+        for article in articles:
+            hot_list.append(article['data']['title'])
         if after is not None:
-            recurse(subreddit, hot_list=hot_list, after=after)
-        return hot_list
+            recurse(subreddit, hot_list, after)
+        return (hot_list)
     else:
-        return None
+        return (None)
 
