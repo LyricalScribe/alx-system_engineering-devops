@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#edit etc/hosts file
+#edits the etc/hosts file
 
 cp /etc/hosts ~/hosts.new
 sed -i 's/127.0.0.1/127.0.0.2/' ~/hosts.new

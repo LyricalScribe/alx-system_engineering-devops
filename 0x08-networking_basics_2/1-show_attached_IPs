@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Get a list of all network interfaces
+# Retrieves list of all the network interfaces
 interfaces=$(ifconfig -a | awk '/inet / {print $2}')
 
 # Loop through each interface and display its IP address
