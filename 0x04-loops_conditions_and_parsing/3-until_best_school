@@ -1,17 +1,9 @@
 #!/usr/bin/env bash
+#Script to print string using untill loop
 
-# a script to print string using untill loop
-
-
-
-I=11
-
-until [ $I == 1 ]
-
+number=0
+until [ $number == 10 ]
 do
-
     echo "Best School"
-
-    I=$((I-1))
-
+    ((number ++))
 done

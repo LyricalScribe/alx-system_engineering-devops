@@ -1,33 +1,18 @@
 #!/usr/bin/env bash
+#Prints a loop with nested if
 
-# A script to print a loop with messages inbetween
+((num = 1))
 
-
-
-COUNTER=1
-
-while [ $COUNTER -lt 11 ]
-
+while((num < 11))
 do
-
-    if [ $COUNTER = 4 ];
-
+    if [ $num -eq 4 ]
     then
-
-	echo "bad luck"
-
-    elif [ $COUNTER = 8 ];
-
+        echo "bad luck"
+    elif [ $num -eq 8 ]
     then
-
-	echo "good luck"
-
+        echo "good luck"
     else
-
-	echo "Best School"
-
+        echo "Best School"
     fi
-
-    ((COUNTER++))
-
+    ((num++))
 done

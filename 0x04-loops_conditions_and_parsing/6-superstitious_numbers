@@ -1,53 +1,19 @@
 #!/usr/bin/env bash
+#Prints numbers 1 to 20
 
-# A script to print numbers with text
+number=1
 
-
-
-COUNTER=1
-
-while [ $COUNTER -lt 21 ]
-
+while [ $number -le 20 ]
 do
-
-    case $COUNTER in
-
-
-
-	4) echo  $COUNTER
-
-	   echo "bad luck from China"
-
-	   ;;
-
-
-
-	9) echo $COUNTER
-
-	   echo "bad luck from Japan"
-
-	   ;;
-
-
-
-	17) echo $COUNTER
-
-	    echo "bad luck from Italy"
-
-	    ;;
-
-
-
-*)
-
-    echo $COUNTER
-
-    ;;
-
-
-
-    esac
-
-    ((COUNTER++))
-
+	echo $number
+	case $number in 4)
+		echo "bad luck from China"
+	esac
+	case $number in 9)
+		echo "bad luck from Japan"
+	esac
+	case $number in 17)
+		echo "bad luck from Italy"
+	esac
+	((number++))
 done

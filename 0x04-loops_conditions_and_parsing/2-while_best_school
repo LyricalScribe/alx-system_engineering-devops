@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
+#Prints Best school 10 times using while loop
 
-# A script to print Best school 10 times using while loop
+((num = 0))
 
-
-
-N=1
-
-while [ $N -le 10 ];
-
+while((num < 10))
 do
-
     echo "Best School"
-
-    (( N++ ))
-
+    ((num++))
 done

@@ -1,27 +1,15 @@
 #!/usr/bin/env bash
+#Prints a string and if statement
 
-#A script to print a string and if statement
+((num = 0))
 
-
-
-I=0
-
-while [ $I -lt 11 ];
-
+while((num < 9))
 do
-
-    if [ $I = 9 ];
-
+    if [ $num -eq 8 ]
     then
-
-	echo "Hi"
-
-    else
-
-	echo "Best School"
-
+        echo "Best School"
+        echo "Hi"
     fi
-
-    ((I++))
-
+    echo "Best School"
+    ((num++))
 done

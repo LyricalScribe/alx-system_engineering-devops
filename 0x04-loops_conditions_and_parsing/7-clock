@@ -1,31 +1,18 @@
 #!/usr/bin/env bash
+#Pints hours and minutes
 
-# A script to print hours and minutes
-
-
-
-H=0
-
-while [ $H -le 12 ]
-
+time=0
+hour=0
+min=0
+while [ $time -le 779 ]
 do
-
-    echo "Hour: $H"
-
-    (( H++ ))
-
-
-
-    M=1
-
-    while [ $M -le 59 ]
-
-    do
-
-	echo "$M"
-
-	(( M++ ))
-
-    done
-
-done
+        if [ $(( time % 60 )) -ne 0 ]
+        then
+                ((min=time%60))
+                echo "$min"
+        else
+                echo "Hour: $hour"
+                ((hour++))
+        fi
+        ((time++))
+done 

@@ -1,36 +1,19 @@
 #!/usr/bin/env bash
+#Script to print fizzbuzz
 
-# A script to print fizzbuzz
-
-
-
-for((a=1; a <101; a++))
-
+number=1
+for (( number=1 ; number<=100 ; number++))
 do
-
-    if((a%15 == 0));
-
-    then
-
-	echo "FizzBuzz"
-
-    elif((a%3 == 0));
-
-    then
-
-	echo "Fizz"
-
-    elif((a%5 == 0));
-
-    then
-
-	echo "Buzz"
-
-    else
-
-	echo "$a"
-
-    fi
-
-done
-
+        if ((number%5 == 0)) && ((number%3 == 0))
+        then
+                echo "FizzBuzz"
+        elif ((number%3 == 0))
+        then
+                echo "Fizz"
+        elif ((number%5 == 0))
+        then
+                echo "Buzz"
+        else
+                echo "$number"
+        fi
+done 
