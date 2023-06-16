@@ -6,8 +6,9 @@ function show()
 {
 	echo "I am invincible!!!"
 }
-trap show SIGTERM
+
 while (( 1 )); do
 		echo "To infinity and beyond"
 		sleep 2
+		trap show SIGTERM
 done
