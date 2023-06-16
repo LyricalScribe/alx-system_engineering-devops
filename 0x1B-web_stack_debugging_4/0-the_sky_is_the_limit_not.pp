@@ -1,5 +1,9 @@
-# Allow multiple request at the same time in a nginx server
-exec{'limit':
-  path    => '/usr/bin:/bin',
-  command => 'sed -i s/15/2000/ /etc/default/nginx; service nginx restart'
+# increase limit of open files per user
+exec { 'fix--for-nginx':
+  environment => ['DIR=/etc/default/nginx',
+                  'OLD=ULIMIT="-n 15"',
+                  'NEW=ULIMIT="-n 15000"'],
+  command     => 'sudo sed -i "s/$OLD/$NEW/" $DIR; sudo service nginx restart',
+  path        => ['/usr/bin', '/bin'],
+  returns     => [0, 1]
 }
