@@ -1,20 +1,25 @@
 #!/usr/bin/env bash
 # This script Starts/Stops/Restarts manage_my_process script
 
-if [ "$1" == "start" ]; then
-    ./manage_my_process &
-    echo "$!" > /var/run/my_process.pid
-    echo "manage_my_process started"
-elif [ "$1" == "stop" ]; then
-    kill "$(cat /var/run/my_process.pid)"
-    rm -f /var/run/my_process.pid
-    echo "manage_my_process stopped"
-elif [ "$1" == "restart" ]; then
-    kill "$(cat /var/run/my_process.pid)"
-    rm -f /var/run/my_process.pid
-    ./manage_my_process &
-    echo "$!" > /var/run/my_process.pid
-    echo "manage_my_process restarted"
+PIDFILE=/var/run/my_process.pid
+
+if [ "$1" == "start" ]
+then
+	./manage_my_process &
+	echo $$ > $PIDFILE
+	echo "manage_my_process started"
+elif [ "$1" == "stop" ]
+then
+	kill "$(pgrep -f /manage_my_process)"
+	rm $PIDFILE
+	echo "manage_my_process stopped"
+elif [ "$1" == "restart" ]
+then
+	kill "$(pgrep -f /manage_my_process)"
+	rm $PIDFILE
+	./manage_my_process &
+	echo $$ > $PIDFILE
+	echo "manage_my_process restarted"
 else
-    echo "Usage: manage_my_process {start|stop|restart}"
+	echo "Usage: manage_my_process {start|stop|restart}"
 fi
