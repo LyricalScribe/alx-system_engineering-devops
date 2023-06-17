@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # runs a script on whoami command as a user
+sudo useradd "$1"
 sudo -u "$1" whoami
