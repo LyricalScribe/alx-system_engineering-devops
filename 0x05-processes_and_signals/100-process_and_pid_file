@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Infinite loop that creates a file with pid, catches signal, and removes file/exits:
-# Ctrl-C (SIGINT), kill (SIGTERM), and ctrl-| (SIGQUIT)
+# Infinite loop that creates a file with pid, catches signal, and removes file/exits
 
 function terminator {
 	rm /var/run/myscript.pid
